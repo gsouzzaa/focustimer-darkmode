@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --timer-color: #323238;
+    --btn-bgcolor: #E1E1E6;
+    --active-color: #859faa9d;
+}
+
+
+main {
+    position: absolute;
+    min-width: 30rem;
+    min-height: 20rem;
+    margin: 5rem 5rem;
+    display: flex;
+    gap: 10rem;
+}
+
+#timer {
+    font-family: 'Roboto';
+    font-size: 10rem;
+    display: flex;
+}
+
+#timer-controls {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#timer-controls button {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+}
+#timer-controls button:hover {
+    scale: 1.1;
+}
+
+.hide {
+    display: none;
+}
+
+button.light-mode {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+button.dark-mode {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border: none;
+    background-color: black;
+    cursor: pointer;
+}
+
+.card-forest, 
+.card-rain, 
+.card-cafeteria, 
+.card-fireplace {
+    position: relative;
+    background-color: #E1E1E6;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    border-radius: 2.4rem;
+}
+
+.card-forest.dark-modeOn,
+.card-rain.dark-modeOn,
+.card-cafeteria.dark-modeOn,
+.card-fireplace.dark-modeOn {
+    background-color: #323238;
+}
+
+#sound-controls {
+    display: grid;
+    grid-template-areas: 
+    "A B"
+    "C D";
+    gap: 2rem;
+}
+
+#sound-controls button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.dark-modeOn,
+#timer-controls.darkOn button svg,
+#timer-controls.darkOn button {
+    background-color: black;
+}
+
+.dark-modeTimer {
+    color: #323238;
+}
+
+#timer-controls.darkOn svg path {
+    fill: #323238;
+}
+
+input[type="range"] {
+    display: flex;
+    width: 8rem;
+    height: .4rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    border-radius: 1rem;
+    background: #323238;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border-radius: 50%;
+    background: black;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.forest.darkmode svg path,
+.rain.darkmode svg path,
+.cafeteria.darkmode svg path,
+.fireplace.darkmode svg path {
+    fill: gray;
+}
+
+input.darkmode {
+    background: gray;
+}
+
+.card-forest.darkmode,
+.card-rain.darkmode,
+.card-cafeteria.darkmode,
+.card-fireplace.darkmode {
+    background-color: var(--active-color);
+}
+
+.card-forest.active,
+.card-rain.active,
+.card-cafeteria.active,
+.card-fireplace.active {
+    background-color: var(--active-color);
+}
+
+.forest.active svg path,
+.rain.active svg path,
+.cafeteria.active svg path,
+.fireplace.active svg path {
+    fill: white;
+}
+
+#forest-volume.active,
+#rain-volume.active,
+#cafeteria-volume.active,
+#fireplace-volume.active {
+    background-color: white;
+}
+
+main #sound-controls.darkmode input[type="range"]::-webkit-slider-thumb {
+background: gray;
+}
+
+main  #sound-controls.active .card-forest.active input[type="range"]::-webkit-slider-thumb,
+main  #sound-controls.active .card-rain.active input[type="range"]::-webkit-slider-thumb,
+main  #sound-controls.active .card-cafeteria.active input[type="range"]::-webkit-slider-thumb,
+main  #sound-controls.active .card-fireplace.active input[type="range"]::-webkit-slider-thumb {
+    background-color: white;
+}
